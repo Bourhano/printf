@@ -6,7 +6,7 @@
  *
  * Return: len
  */
-int print(char *str)
+int print(const char *str)
 {
 	int i;
 
