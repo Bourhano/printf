@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include<strings.h>
 
 /**
  * get_dir_count - Returns the number of directives in the format string
@@ -37,12 +36,12 @@ int get_dir_count(const char *format)
  **/
 int _printf(const char *format, ...)
 {
-        va_list valist, list;
+	va_list valist, list;
 	int n, length = 0, l, i;
 	const char *exFormat = format;
 	char directive, *toPrint, *output, c;
 
-        n = get_dir_count(format);
+	n = get_dir_count(format);
 	va_start(valist, format);
 	if (n == 0)
 		return (print(format));
@@ -96,7 +95,7 @@ int _printf(const char *format, ...)
 					output[i++] = '%';
 					break;
 				case 'c':
-				        c = va_arg(valist, int);
+					c = va_arg(valist, int);
 					output[i++] = c;
 					break;
 				case 's':
