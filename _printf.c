@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 	char directive, *toPrint, *output, c;
 
         n = get_dir_count(format);
-	toPrint = n == 1 ? "1\n" : "0\n";
+	toPrint = n == 2 ? "2\n" : "0\n";
 	print(toPrint);
 	va_start(valist, format);
 	if (n == 0)
@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
 					length++;
 					break;
 				case 'c':
-					va_arg(valist, int);
+					va_arg(list, int);
 					length++;
 					break;
 				case 's':
@@ -81,6 +81,7 @@ int _printf(const char *format, ...)
 			}
 			exFormat++;
 		}
+		va_end(list);
 		l = _strlen(format);
 		length = length + l - 2 * n + 1;
 		output = malloc(length);
@@ -112,6 +113,7 @@ int _printf(const char *format, ...)
 			}
 			exFormat++;
 		}
+		va_end(valist);
 		output[i] = 0;
 		print(output);
 		return (length);
