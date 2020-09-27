@@ -8,5 +8,7 @@
 
 
 int _printf(const char *format, ...);
+int _strlen(const char *str);
+int print(const char *str);
 
 #endif /*_HOLBERTON_H_*/
