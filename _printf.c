@@ -43,8 +43,6 @@ int _printf(const char *format, ...)
 	char directive, *toPrint, *output, c;
 
         n = get_dir_count(format);
-	toPrint = n == 2 ? "2\n" : "0\n";
-	print(toPrint);
 	va_start(valist, format);
 	if (n == 0)
 	{
