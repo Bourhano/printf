@@ -45,10 +45,7 @@ int _printf(const char *format, ...)
         n = get_dir_count(format);
 	va_start(valist, format);
 	if (n == 0)
-	{
-		print(format);
-		return (_strlen(format));
-	}
+		return (print(format));
 	else
 	{
 		va_copy(list, valist);
@@ -113,7 +110,6 @@ int _printf(const char *format, ...)
 		}
 		va_end(valist);
 		output[i] = 0;
-		print(output);
-		return (length);
+		return (print(output));
 	}
 }
